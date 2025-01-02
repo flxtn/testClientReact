@@ -51,6 +51,7 @@ export const ItemsTable: React.FC<ItemsTableProps> = ({
         setEditedItem(null);
       } catch (err) {
         alert("Failed update item");
+        console.error(err);
       }
     }
   };

@@ -4,7 +4,7 @@ import { apiSlice, useLogoutMutation } from "@/redux/features/auth/authApi";
 import { selectUser } from "@/redux/features/auth/authSelector";
 import { clearUser } from "@/redux/features/auth/authSlice";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
 
 const Sidebar = () => {

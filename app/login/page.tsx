@@ -23,6 +23,7 @@ const LoginPage = () => {
       router.push("/orders");
     } catch (err) {
       alert("Login failed.");
+      console.error(err);
     }
   };
   return (

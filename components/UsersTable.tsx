@@ -31,6 +31,7 @@ export const UsersTable: React.FC<UsersTableProps> = ({ users, refetch }) => {
         setEditedItem(null);
       } catch (err) {
         alert("Failed update user");
+        console.error(err);
       }
     }
   };

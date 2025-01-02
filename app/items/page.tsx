@@ -34,6 +34,7 @@ const ItemsPage = () => {
       alert("Order placed successfully!");
     } catch (err) {
       alert("Failed to create order");
+      console.error(err);
     }
   };
 

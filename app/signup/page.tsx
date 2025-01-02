@@ -30,6 +30,7 @@ const RegisterPage = () => {
       router.push("/login");
     } catch (err) {
       alert("Register failed.");
+      console.error(err);
     }
   };
   return (
