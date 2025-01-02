@@ -60,7 +60,7 @@ const LoginPage = () => {
           Login
         </button>
         <p className="mt-4 text-center text-gray-600">
-          Don't have an account?
+          Dont have an account?
           <Link href="/signup" className="text-blue-600 hover:underline">
             Register here
           </Link>
