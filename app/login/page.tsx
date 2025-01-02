@@ -2,6 +2,7 @@
 
 import { apiSlice, useLoginMutation } from "@/redux/features/auth/authApi";
 import { setUser } from "@/redux/features/auth/authSlice";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FormEvent, useState } from "react";
 import { useDispatch } from "react-redux";
@@ -58,6 +59,12 @@ const LoginPage = () => {
         >
           Login
         </button>
+        <p className="mt-4 text-center text-gray-600">
+          Don't have an account?{" "}
+          <Link href="/signup" className="text-blue-600 hover:underline">
+            Register here
+          </Link>
+        </p>
       </form>
     </div>
   );

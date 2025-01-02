@@ -38,6 +38,27 @@ const ItemsPage = () => {
     }
   };
 
+  const renderPagination = () => {
+    if (!items || items.meta.total_pages === 1) return null;
+
+    const pages = [];
+    for (let i = 1; i <= items.meta.total_pages; i++) {
+      pages.push(
+        <button
+          key={i}
+          onClick={() => setPage(i)}
+          className={`px-3 py-2 mx-1 rounded ${
+            page === i ? "bg-blue-500 text-white" : "bg-gray-300"
+          }`}
+        >
+          {i}
+        </button>
+      );
+    }
+
+    return <div className="flex justify-center mt-4">{pages}</div>;
+  };
+
   const handleClearCart = () => {
     setSelectedItems([]);
   };
@@ -69,11 +90,14 @@ const ItemsPage = () => {
       <div className="flex space-x-4">
         <div className="w-[70%]">
           {!isLoading && items ? (
-            <ItemsTable
-              items={items.items}
-              setSelectedItem={setSelectedItems}
-              refetch={refetch}
-            />
+            <>
+              <ItemsTable
+                items={items.items}
+                setSelectedItem={setSelectedItems}
+                refetch={refetch}
+              />
+              {renderPagination()}
+            </>
           ) : (
             <p>Loading...</p>
           )}

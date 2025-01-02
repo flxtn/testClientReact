@@ -1,6 +1,7 @@
 "use client";
 
 import { useRegisterMutation } from "@/redux/features/auth/authApi";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FormEvent, useState } from "react";
 
@@ -95,6 +96,12 @@ const RegisterPage = () => {
         >
           Register
         </button>
+        <p className="mt-4 text-center text-gray-600">
+          Already have an account?{" "}
+          <Link href="/login" className="text-blue-600 hover:underline">
+            Login Here
+          </Link>
+        </p>
       </form>
     </div>
   );
