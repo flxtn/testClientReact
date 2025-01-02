@@ -3,8 +3,15 @@
 import { UsersTable } from "@/components/UsersTable";
 import withAdminAccess from "@/hooks/widthAdminAcess";
 import { useGetAllUsersQuery } from "@/redux/features/auth/authApi";
+import { User } from "@/redux/features/auth/authSlice";
 
-const UsersPage = () => {
+type UsersPageProps = {
+  users: User[];
+  isLoading: boolean;
+  refetch: () => void;
+};
+
+const UsersPage: React.FC<UsersPageProps> = () => {
   const { data: users, isLoading, refetch } = useGetAllUsersQuery();
   return (
     <div className="p-4">

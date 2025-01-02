@@ -4,14 +4,8 @@ import { selectUser } from "@/redux/features/auth/authSelector";
 import { Loader } from "@/components/Loader";
 import { useEffect } from "react";
 
-type WithAdminAccessProps = {
-  [key: string]: any;
-};
-
-const withAdminAccess = <P extends WithAdminAccessProps>(
-  Component: React.ComponentType<P>
-) => {
-  return (props: P) => {
+const withAdminAccess = (Component: React.ComponentType<any>) => {
+  return (props: any) => {
     const user = useSelector(selectUser);
     const router = useRouter();
 
