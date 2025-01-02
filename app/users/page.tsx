@@ -3,7 +3,6 @@
 import { UsersTable } from "@/components/UsersTable";
 import withAdminAccess from "@/hooks/widthAdminAcess";
 import { useGetAllUsersQuery } from "@/redux/features/auth/authApi";
-import { User } from "@/redux/features/auth/authSlice";
 
 const UsersPage = () => {
   const { data: users, isLoading, refetch } = useGetAllUsersQuery();
